@@ -1,0 +1,240 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(-135deg,#972a08, #9c0192, #044861, #065744);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 75%;
+    }
+
+    75% {
+        background-position: 75% 100%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+/* Header Styling */
+.header {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Styling */
+.navbar .nav-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-list li {
+    margin-right: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar .nav-list a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.navbar .nav-list a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* color: black; */
+    transform: translateY(-2px);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+/* Search Container Styling */
+.search-container {
+    flex-grow: 1;
+    margin: 0 30px;
+    max-width: 400px;
+}
+
+.search-bar {
+    width: 50%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(14, 11, 117, 0.1);
+    transition: box-shadow 0.2s ease, width 0.4s ease;
+}
+
+.search-bar:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    width: 100%;
+
+}
+
+/* Button Styling */
+.btn {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #ff4a3d;
+    transform: translateY(-2px);
+}
+
+
+/* Introduction Section */
+#home > .introduction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 80vh;
+    text-align: center;
+    gap: 50px; 
+    padding: 20px;
+    
+}
+
+/* Intro Text Card */
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background:black; */
+    padding: 10px;
+    border-radius: 15px;
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    min-height: 200px; 
+}
+
+.intro-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color:white;
+    padding: 15px;
+    background-color:black;
+    border: 2px solid black;
+    border-radius: 40px;
+}
+
+.intro-text .name {
+    color: #2575fc;
+    font-weight: 600;
+    background-color: transparent;
+
+}
+
+.intro-text p {
+    font-size: 2rem;
+    color: #666;
+    margin: 10px 0;
+}
+
+.intro-text .description {
+    font-size: 1.5rem;
+    color:rgb(236, 186, 92);
+    line-height: 1.6;
+}
+
+
+.typing-animation {
+    display: inline-block;
+    color:white;
+    /* background-color: wheat; */
+    font-weight: 500;
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: 300px; /* Set a fixed width based on the longest word */
+    min-height: 1.2em; /* Set a fixed height based on the font size */
+    text-align: center;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    50.01%, 100% {
+        opacity: 0;
+    }
+}
+/* Intro Image Card */
+.intro-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:white;
+    padding: 2px;
+    border-radius: 50%; /* Makes the card circular */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    animation: float 3s ease-in-out infinite;
+}
+
+.intro-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover;
+    /* background-color: white; */
+    transition: transform 0.5s ease;
+}
+
+.intro-image:hover img {
+    transform: scale(1);
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(0px); }
+}
