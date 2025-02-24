@@ -28,3 +28,12 @@ function erase() {
 }
 
 type(); // Start the typing animation
+
+
+// Hambuger toggle
+
+document.getElementById('menu-icon').addEventListener('click', function () {
+    document.querySelector('.nav-list').classList.toggle('active');
+    document.querySelector('.search-container').classList.toggle('active');
+    document.querySelector('.btn').classList.toggle('active');
+});
