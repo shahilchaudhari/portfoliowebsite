@@ -25,14 +25,44 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#travel">Travel</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <div class="search-container">
             <input type="text" placeholder="Search..." class="search-bar">
         </div>
-        <button class="btn">Reach Me</button>
+
+        <button class="reachMeBtn">Reach Me</button>
+
+        <!-- Popup Contact Form -->
+        <div id="contactPopup" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h2>Reach Me</h2>
+                <form action="https://formsubmit.co/3cddb0ff0c3120b38a858592fdda83b2" method="POST">
+                    <!-- <input type="hidden" name="_captcha" value="false"> -->
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="tel" name="phone" placeholder="Your phone " pattern="[0-9]{10}">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <input type="hidden" name="_template" value="table">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Thank You Popup -->
+        <div id="thankYouPopup" class="popup">
+            <div class="p-content">
+                <span class="close">&times;</span>
+                <div class="tick-mark">✔</div> 
+                <h2>Thank You!</h2>
+                <p>Your message has been sent successfully. We'll get back to you soon.</p>
+            </div>
+        </div>
+
     </header>
+
+
 
     <section id="home">
         <div class="introduction">
@@ -50,6 +80,8 @@
             </div>
         </div>
     </section>
+
+    <!-- projects section -->
 
 </body>
 
