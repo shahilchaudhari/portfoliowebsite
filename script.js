@@ -1,5 +1,5 @@
 const typingText = document.querySelector('.typing-animation');
-const texts = ["Web Developer", "Engineer", "Traveler"];
+const texts = ["Developer", "Engineer", "Traveler"];
 let index = 0;
 let charIndex = 0;
 let isTyping = true;
