@@ -491,23 +491,30 @@ form button:hover {
     text-decoration: none;
     padding: 2px 20px;
     border: 2px solid transparent;
-    border-radius: 15px;
+    border-radius: 20px;
 }
 
 .link a:hover {
     /* text-decoration: underline; */
-    background-color: white;
+    /* background-color: black; */
     color: hsl(217 91% 60%);
-}
 
+}
 .link img {
     width: 100%;
     /* Full width of the column */
-    height: auto;
+    /* height: auto; */
     border-radius: 10px;
     object-fit: cover;
     margin-top: 10px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     /* Space between link and image */
+}
+
+.link img:hover{
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
 }
 
 .desc {
