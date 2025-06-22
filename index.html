@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="menu-icon" id="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#travel">Travel</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" placeholder="Search..." class="search-bar">
+        </div>
+
+        <button class="reachMeBtn">Reach Me</button>
+
+        <!-- Popup Contact Form -->
+        <div id="contactPopup" class    ="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h2>Reach Me</h2>
+                <form action="https://formspree.io/f/xwplpoja" method="POST">
+                    <!-- <input type="hidden" name="_captcha" value="false"> -->
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="tel" name="phone" placeholder="Your phone " pattern="[0-9]{10}">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <input type="hidden" name="_template" value="table">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+
+    </header>
+
+
+
+    <section id="home">
+        <div class="introduction">
+            <div class="intro-text">
+                <h1>Hi, I'm <span class="name">Shahil</span></h1>
+                <p><span class="typing-animation"></span></p>
+                <p class="description">
+                    Passionate about creating innovative solutions and exploring the world.
+                    I love turning ideas into reality through code and design.
+                </p>
+            </div>
+
+            <div class="intro-image">
+                <img src="./assets/portfolio2.jpeg" alt="this is my photo">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="portfolio">
+            <h2>Portfolio Projects</h2>
+            <div class="project">
+                <div class="link">
+                    <li><a href="https://gymflex-bice.vercel.app/" target="_blank">Gymflex</a></li>
+                    <li>
+                        <a href="https://gymflex-bice.vercel.app/" target="_blank"><img src="./assets/gymflex.jpg" alt="" href></a>
+                    </li>
+                    
+                </div>
+
+                <div class="desc">
+                    <div>
+                        <li>* A modern single-page website designed to capture customer contact details seamlessly.</li>
+                        <li>* Fully optimized and responsive for desktops, tablets, and mobile devices.</li>
+                        <br>
+                        <p> Technologies used:</p>
+                        <li>
+                            <img src="./assets/html.png" alt="HTML">
+                            <img src="./assets/css.png" alt="CSS">
+                            <img src="./assets/JS.png" alt="Java Script">
+                            <img src="./assets/formspree_logo.jpg" alt="Form Spree" height="30px" width="30px">
+                        </li>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="project">
+                <div class="link">
+                    <li><a href="https://movies4u2.netlify.app/" target="_blank">movies4u</a></li>
+                    <li>
+                        <a href="https://movies4u2.netlify.app/" target="_blank"><img src="./assets/movies4u.jpg" alt="movies4u"></a>
+                    </li>
+                    
+                </div>
+                
+                <div class="desc">
+                    <div>
+                        <li>* A movie search platform powered by the TMDB open-source API for seamless movie discovery.</li>
+                        <li>* Integrated backend functionality to store the most searched movies using Appwrite.</li>
+                        <li>* Enhanced search performance with debouncing for a smoother user experience.</li>
+                        <br>
+                        <p> Technologies used:</p>
+                        <li>
+                            <img src="./assets/JS.png" alt="Java Script">
+                            <img src="./assets/react.png" alt="React">
+                            <img src="./assets/tailwindcss.png" alt="Tailwind CSS">
+                            <img src="./assets/tmdb.jpg" alt="The Movie Database">
+                            <img src="./assets/appwrite.png" alt="Appwrite">
+                        </li>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="link">
+                    <li><a href="https://fillerformpdf.netlify.app/" target="_blank">fillerformPDF</a></li>
+                    <li>
+                        <a href="https://fillerformpdf.netlify.app/" target="_blank"><img src="./assets/talkPDF.png" alt="talk"></a>
+                    </li>
+                    
+                </div>
+                
+                <div class="desc">
+                    <div>
+                        <li>* Automatically extract text and structured data from PDF documents</li>
+                        <li>* Design dynamic forms with UI elements like text fields, checkboxes, and radio buttons.</li>
+                        <li>* Fill forms digitally and print—no manual handwriting required.</li>
+                        <br>
+                        <p> Technologies used:</p>
+                        <li>
+                            <img src="./assets/Typescript.png" alt="Type Script">
+                            <img src="./assets/react.png" alt="React">
+                            <img src="./assets/tailwindcss.png" alt="tailwindcss">
+                            <img src="./assets/pdfjs.png" alt="PDF-JS">
+                            <img src="./assets/pdf-lib.webp" alt="PDF-LIB">
+                        </li>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="link">
+                    <li><a href="https://curioai.netlify.app/" target="_blank">fillerformPDF</a></li>
+                    <li>
+                        <a href="https://curioai.netlify.app/" target="_blank"><img src="./assets/curioAI.png" alt="talk"></a>
+                    </li>
+                    
+                </div>
+                
+                <div class="desc">
+                    <div>
+                        <li>* Multi-LLM Interaction: Query and compare responses from various open-source LLMs available on Open Router. </li>
+                        <li>* Role-Based Discussions: Engage in dynamic debates, discussions, or conversational learning by assigning distinct roles to different AI models.</li>
+                        <li>* LaTeX Math Support: Seamlessly write and solve complex mathematical problems using LaTeX formatting.</li>
+                        <br>
+                        <p> Technologies used:</p>
+                        <li>
+                            <img src="./assets/openrouter.png" alt="Open-Router">
+                            <img src="./assets/Typescript.png" alt="Type Script">
+                            <img src="./assets/tailwindcss.png" alt="tailwindcss">
+                            <img src="./assets/react.png" alt="React">
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

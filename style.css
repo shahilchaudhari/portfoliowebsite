@@ -1,0 +1,649 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(-135deg, #972a08, #560651, #044861, #065744);
+    background-size: 6000% 6000%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 75%;
+    }
+
+    /* 75% {
+        background-position: 75% 100%;
+    } */
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+/* Header Styling */
+.header {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Styling */
+.nav-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-list li {
+    margin-right: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar .nav-list a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.navbar .nav-list a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* color: black; */
+    transform: translateY(-2px);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Search Container Styling */
+.search-container {
+    flex-grow: 1;
+    margin: 0 30px;
+    max-width: 400px;
+}
+
+.search-bar {
+    width: 50%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(14, 11, 117, 0.1);
+    transition: box-shadow 0.2s ease, width 0.4s ease;
+}
+
+.search-bar:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    width: 100%;
+
+}
+
+/* Button Styling */
+.reachMeBtn {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.reachMeBtn:hover {
+    background-color: #ff4a3d;
+    transform: translateY(-2px);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+    margin-top: 20px;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #333;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 8px rgba(106, 17, 203, 0.3);
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+form button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #6a11cb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: #2575fc;
+    transform: translateY(-2px);
+}
+
+/* Thank You Popup Specific Styles */
+/* Thank You Popup Specific Styles */
+#thankYouPopup {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 80%;
+    height: auto;
+    max-width: 400px;
+    /* Reasonable size */
+    z-index: 1000;
+    /* Ensure it's on top */
+}
+
+#thankYouPopup .p-content {
+    text-align: center;
+}
+
+#thankYouPopup h2 {
+    color: #6a11cb;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+#thankYouPopup p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Green Tick Mark */
+#thankYouPopup .tick-mark {
+    font-size: 48px;
+    color: #4CAF50;
+    /* Green color */
+    margin-bottom: 20px;
+}
+
+/* Close Button */
+#thankYouPopup .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+#thankYouPopup .close:hover {
+    color: #000;
+}
+
+/* Introduction Section */
+#home>.introduction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 80vh;
+    text-align: center;
+    gap: 30px;
+    padding: 20px;
+
+}
+
+/* Intro Text Card */
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background:black; */
+    padding: 10px;
+    border-radius: 15px;
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+    max-width: 50%;
+    width: 100%;
+    text-align: center;
+    min-height: 200px;
+}
+
+.intro-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: white;
+    padding: 15px;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 50px;
+}
+
+.intro-text .name {
+    color: #2575fc;
+    font-weight: 600;
+    background-color: transparent;
+
+}
+
+.intro-text p {
+    font-size: 2rem;
+    color: #666;
+    margin: 10px 0;
+}
+
+.intro-text .description {
+    font-size: 1.5rem;
+    color: rgb(236, 186, 92);
+    line-height: 1.6;
+}
+
+
+.typing-animation {
+    display: inline-block;
+    color: white;
+    /* background-color: wheat; */
+    font-weight: 500;
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: 50%;
+    /* Set a fixed width based on the longest word */
+    min-height: 1.2em;
+    /* Set a fixed height based on the font size */
+    text-align: center;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    50.01%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Intro Image Card */
+.intro-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 2px;
+    border-radius: 50%;
+    /* Makes the card circular */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 75vh;
+    height: 75vh;
+    overflow: hidden;
+    animation: float 3s ease-in-out infinite;
+}
+
+.intro-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Makes the image circular */
+    object-fit: cover;
+    /* background-color: white; */
+    transition: transform 0.5s ease;
+}
+
+.intro-image:hover img {
+    transform: scale(1.1);
+}
+
+/* Floating Animation */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+}
+
+/* hamburger of the header */
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+/* Portfolio Section Styling */
+.portfolio {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.portfolio h2 {
+    color: white;
+    font-size: 2rem;
+    background-color: black;
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    border-radius: 40px;
+    width: auto;
+    display: inline-block;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* Two columns: 1st for link and image, 2nd for description and technologies */
+    align-items: start;
+    margin-bottom: 20px;
+    gap: 50px;
+    background-color: transparent;
+    /* Card background */
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+    /* Card shadow */
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+.link a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+    padding: 2px 20px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+}
+
+.link a:hover {
+    /* text-decoration: underline; */
+    /* background-color: black; */
+    color: hsl(217 91% 60%);
+
+}
+.link img {
+    width: 100%;
+    /* Full width of the column */
+    /* height: auto; */
+    border-radius: 10px;
+    object-fit: cover;
+    margin-top: 10px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Space between link and image */
+}
+
+.link img:hover{
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.desc {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding-top: 40px;
+
+}
+
+.desc div li img {
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+}
+
+.desc div li {
+    list-style: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.desc div p {
+    color: wheat;
+    font-size: 1.5rem;
+}
+
+
+
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+
+    .nav-list,
+    .search-container,
+    .reachMeBtn {
+        display: none;
+    }
+
+    .nav-list.active,
+    .search-container.active,
+    .reachMeBtn.active,
+    .search-bar {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .nav-list.active li {
+        margin: 5px;
+    }
+
+    .menu-icon {
+        display: flex;
+
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    /* Introduction Section Responsive Styling */
+    #home>.introduction {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 10px;
+        gap: 10px;
+    }
+
+    .intro-image {
+        width: 300px;
+        height: 300px;
+        order: 1;
+        /* Image comes first */
+    }
+
+    .intro-text {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+        margin: 1px;
+        /* Text comes after the image */
+    }
+
+    .intro-text h1 {
+        font-size: 2rem;
+        margin: auto;
+    }
+
+    .intro-text p {
+        font-size: 1.5rem;
+    }
+
+    .intro-text .description {
+        font-size: 1.2rem;
+        margin: auto;
+    }
+
+    .portfolio h2 {
+        font-size: 1.5rem;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .project {
+        grid-template-columns: 1fr;
+        /* Switch to a single column layout */
+        padding: 0 1px;
+    }
+
+    .link {
+        padding: 5px 5px 0 5px;
+    }
+
+    .desc {
+        padding: 0px 5px 0 5px;
+    }
+
+    .desc div li img {
+        padding: 0px;
+    }
+
+    .desc div li img {
+        height: 80px;
+        width: 80px;
+        padding: 5px;
+    }
+}
